@@ -3,30 +3,22 @@ package eu.eladaria.vijo.gameoflife
 import eu.eladaria.vijo.gameoflife.service.LifeService
 import eu.eladaria.vijo.gameoflife.view.LifeTerminalView
 
-val lifeTerminalView: LifeTerminalView = LifeTerminalView()
-
 fun main() {
-    var running: Boolean = true
-
-    //FIXME: Get beings from user input
+    //FIXME: Get beings from user input instead of hard code here
     var beings = arrayOf(
         arrayOf(true, false, true),
         arrayOf(false, true, false),
         arrayOf(false, false, false)
     )
-    val lifeService: LifeService = LifeService(beings)
-    lifeService.startCycle()
+    val lifeService = LifeService(beings)
 
-    while (running) {
-        lifeService.startCycle()
-        lifeTerminalView.render(beings = beings)
+//TODO: Ask user: How many rows?, : How many columns?;  Random spread of cells or let user give alive/dead
+    while (true) {
+        LifeTerminalView.render(beings = beings)
+        beings = lifeService.startCycle()
         Thread.sleep(1000)
     }
 }
 
-//TODO: First impl algorithm
-
-//Q: How many rows?, Q: How many columns? - random or provided alive/dead
-
-
-// Rules for algorithm
+//TODO: Comments/README
+// https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life

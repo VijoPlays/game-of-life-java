@@ -1,6 +1,6 @@
 package eu.eladaria.vijo.gameoflife.service
 
-class LifeService(var beings: Array<Array<Boolean>>) {
+class LifeService(private var beings: Array<Array<Boolean>>) {
 
     val rows = beings.size
     val columns = beings[0].size
@@ -17,12 +17,12 @@ class LifeService(var beings: Array<Array<Boolean>>) {
             for (j in previousBeings[i].indices) {
                 val aliveNeighbours = getAliveNeighbours(previousBeings = previousBeings, rowIndex = i, columnIndex = j)
 
-                if (previousBeings[i][j]) { //Cell is alive algorithm
+                if (previousBeings[i][j]) { //"Cell is alive"-algorithm
                     when(aliveNeighbours) {
                         2, 3 -> beings[i][j] = true
                         else -> beings[i][j] = false
                     }
-                } else { //Cell is dead algorithm
+                } else { //"Cell is dead"-algorithm
                     when(aliveNeighbours) {
                         3 -> beings[i][j] = true
                         else -> beings[i][j] = false
@@ -34,6 +34,7 @@ class LifeService(var beings: Array<Array<Boolean>>) {
     }
 
     private fun getAliveNeighbours(previousBeings: Array<Array<Boolean>>, rowIndex: Int, columnIndex: Int): Int {
+        //TODO: Get cells around current one
         //TODO: Add failsafe for overflow/underflow
 
         return 2
