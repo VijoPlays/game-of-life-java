@@ -6,9 +6,11 @@ import eu.eladaria.vijo.gameoflife.view.LifeTerminalView
 fun main() {
     //FIXME: Get beings from user input instead of hard code here
     var beings = arrayOf(
-        arrayOf(true, false, true),
-        arrayOf(false, true, false),
-        arrayOf(false, false, false)
+        arrayOf(false, false, false, false, false),
+        arrayOf(false, false, false, false, false),
+        arrayOf(false, true, true, true, false),
+        arrayOf(false, false, false, false, false),
+        arrayOf(false, false, false, false, false),
     )
     val lifeService = LifeService(beings)
 

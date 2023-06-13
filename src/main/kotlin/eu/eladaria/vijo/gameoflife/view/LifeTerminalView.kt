@@ -6,9 +6,9 @@ class LifeTerminalView {
             for (i in beings) {
                 for (j in i) {
                     if(j) {
-                        print("*")
+                        print("1")
                     } else {
-                        print(" ")
+                        print("0")
                     }
                 }
                 println("")
