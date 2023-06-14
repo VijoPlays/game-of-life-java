@@ -1,8 +1,14 @@
 package eu.eladaria.vijo.gameoflife.view
 
+/**
+ * Simple View class that displays living and dead cells.
+ */
 class LifeTerminalView {
     companion object {
-        fun render(beings: Array<Array<Boolean>>) {
+        /**
+         * Renders the beings as 1 = alive, and 0 = dead.
+         */
+        fun render(beings: Array<BooleanArray>) {
             for (i in beings) {
                 for (j in i) {
                     if(j) {

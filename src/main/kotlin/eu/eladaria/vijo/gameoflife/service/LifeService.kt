@@ -1,18 +1,24 @@
 package eu.eladaria.vijo.gameoflife.service
 
-class LifeService(private var beings: Array<Array<Boolean>>) {
+/**
+ * Service that can start and manipulate the cycles in the Game of Life.
+ */
+class LifeService(private var beings: Array<BooleanArray>) {
 
     val rowCount = beings.size
     val columnCount = beings[0].size
 
-    fun startCycle(): Array<Array<Boolean>> {
+    /**
+     * Starts 1 cycle of the Game of Life and returns the new generation of cells.
+     */
+    fun startCycle(): Array<BooleanArray> {
         //PreviousBeings is a copy of the beings at the start of the current cycle. Beings is thus the next generation and can be modified freely, depending on the values of previousBeings.
-        val previousBeings = beings.toMutableList().map { e -> e.toMutableList().map { it }.toTypedArray() }.toTypedArray()
+        val previousBeings = Array(beings.size) { beings[it].copyOf() }
 
         return calculateCycle(previousBeings = previousBeings)
     }
 
-    private fun calculateCycle(previousBeings: Array<Array<Boolean>>): Array<Array<Boolean>> {
+    private fun calculateCycle(previousBeings: Array<BooleanArray>): Array<BooleanArray> {
         for (i in previousBeings.indices) {
             for (j in previousBeings[i].indices) {
                 val aliveNeighbours = getAliveNeighbours(previousBeings = previousBeings, rowIndex = i, columnIndex = j)
@@ -33,7 +39,7 @@ class LifeService(private var beings: Array<Array<Boolean>>) {
         return beings
     }
 
-    private fun getAliveNeighbours(previousBeings: Array<Array<Boolean>>, rowIndex: Int, columnIndex: Int): Int {
+    private fun getAliveNeighbours(previousBeings: Array<BooleanArray>, rowIndex: Int, columnIndex: Int): Int {
         var aliveNeighbours = 0
 
         for(i in -1..1) {
