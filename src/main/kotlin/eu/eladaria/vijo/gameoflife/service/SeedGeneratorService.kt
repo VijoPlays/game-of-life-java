@@ -23,7 +23,7 @@ class SeedGeneratorService {
             println("Please provide how many columns this seed should have.")
             val columnSize = readLine()?.toInt()
 
-            //FIXME: Custom seed generation for user
+            //FIXME: Custom seed generation by user
             if (rowSize != null && columnSize != null) {
                 beings = if(customGameSeed == "yes" || customGameSeed == "y") {
                     println("Please provide which cells should be alive: 0 = dead, 1 = alive.")
@@ -36,15 +36,15 @@ class SeedGeneratorService {
                     )
 
                 } else {
-                        val rows = Array(rowSize) { BooleanArray(columnSize) }
+                    val rows = Array(rowSize) { BooleanArray(columnSize) }
 
-                        for (i in rows.indices) {
-                            for(j in rows[i].indices){
-                                rows[i][j] = Random.nextBoolean()
-                            }
+                    for (i in rows.indices) {
+                        for(j in rows[i].indices){
+                            rows[i][j] = Random.nextBoolean()
                         }
-                        rows
                     }
+                    rows
+                }
             }
             else {
                 println("Invalid input")

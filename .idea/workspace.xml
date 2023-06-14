@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b077bfd8-81ba-49b4-b63e-1c2e151cd5ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/eu/eladaria/vijo/gameoflife/service/SeedGeneratorService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/eu/eladaria/vijo/gameoflife/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/eu/eladaria/vijo/gameoflife/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/eu/eladaria/vijo/gameoflife/service/LifeService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/eu/eladaria/vijo/gameoflife/service/LifeService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/eu/eladaria/vijo/gameoflife/view/LifeTerminalView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/eu/eladaria/vijo/gameoflife/view/LifeTerminalView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/eu/eladaria/vijo/gameoflife/service/SeedGeneratorService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/eu/eladaria/vijo/gameoflife/service/SeedGeneratorService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
